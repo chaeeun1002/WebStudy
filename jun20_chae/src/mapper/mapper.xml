@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mymapper">
+	<insert id="insertIntoBbs" parameterType="model.BBS">
+		insert into bbs(seqno,title,content,id,bbs_date)
+		values(#{seqno},#{title},#{content},#{id},#{bbs_date})
+	</insert>
+	<select id="selectMaxSeqno" resultType="Integer">
+		select max(seqno) from bbs
+	</select>
+	<select id="selectBBS" resultType="model.BBS">
+		select * from bbs order by seqno desc
+	</select>
+	<select id="selectBBSBySeqno" resultType="model.BBS" parameterType="Integer">
+		select * from bbs where seqno = #{seqno}
+	</select>
+	<select id="selectMemberIdandPw" resultType="model.Member" parameterType="String">
+		select mem_id, mem_pw from member
+		where mem_id = #{mem_id}
+	</select>
+	<select id="selectMaxCode" resultType="String">
+		select max(to_number(code)) from item_info
+	</select>
+	<insert id="insertIntoItemInfo" parameterType="model.Product">
+		insert into item_info(code,name,price,info,origin)
+		values(#{code},#{name},#{price},#{info},#{origin})
+	</insert>
+	<select id="selectItemInfo" resultType="model.Product">
+		select * from item_info order by (to_number(code)) desc
+	</select>
+	<select id="selectBbsCount" resultType="Integer">
+		select count(*) from bbs
+	</select>
+	<select id="selectItemInfoCount" resultType="Integer">
+		select count(*) from item_info
+	</select>
+	<select id="selectItemInfoByCode" resultType="model.Product" parameterType="Integer">
+		select * from item_info where code = #{code}
+	</select>
+</mapper>
