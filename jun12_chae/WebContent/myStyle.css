@@ -1,0 +1,19 @@
+@charset "EUC-KR";
+
+p.title1{
+	background-color: yellow;
+	color: red;
+	border: 1px solid gray;
+}
+
+p#title2{
+	background-color: yellow;
+	color: blue;
+	border: 1px solid gray;
+}
+
+h1, h2 {
+	font-family: sans-serif;
+	color: green;
+	border-bottom: 1px solid blue;
+}

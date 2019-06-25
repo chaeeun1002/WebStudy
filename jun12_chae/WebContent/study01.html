@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Study01</title>
+<link type="text/css" rel="stylesheet" href="myStyle.css">
+</head>
+<body>
+<h1>환영합니다.</h1>
+<h2>방문해주셔서 감사합니다.</h2>
+<form action="">
+	<label>나이:<input type="text" name="age"/></label>
+	<br/>
+	성별:
+	<input id="female" type="radio" name="gender" value="f" checked="checked"/>
+	<label for="female">여성</label>
+<!-- for:어떤 입력폼의 레이블인지 설정(해당 입력폼의 id(식별자)를 입려해줌) -->
+	<input id="male" type="radio" name="gender" value="m"/>
+	<label for="male">남성</label>
+	<br/>
+<!-- 관련된 입력 요소들을 그룹으로 묶기 -->
+	<fieldset>
+		<legend>연 락 처</legend>
+		<label>Email:<br/>
+			<input type="text" name="email"/>
+		</label><br/>
+		<label>Mobile:<br/>
+			<input type="text" name="mobile"/>
+		</label><br/>
+		<label>Phone:<br/>
+			<input type="text" name="telephone"/>
+		</label>
+	</fieldset>
+<!-- fieldset:html요소를 박스로 묶어주는 태그 -->
+<!-- legend:fieldset에 제목을 달아주는 태그 -->
+	<br/>
+	<label for="username">이름:</label>
+	<input type="text" id="username" name="name" required="required"/><br/>
+	<label for="password">암호:</label>
+	<input type="password" id="password" name="pwd" required="required"/><br/>
+	<label for="intro">자기소개:</label>
+	<textarea rows="5" cols="30" id="intro" name="intro"></textarea><br/>
+	<input type="submit" value="제출하기"/>
+<!-- required:값의 유효성 검사를 해주는 속성.(필수항목체크) -->
+	<br/>
+	<label for="departure">출발일</label>
+	<input type="date" id="departure" name="start"/>
+	<input type="submit" value="확 인"/>
+<!-- input type="date":달력 -->
+	<br/>
+	<p class="title1">문단의 스타일 적용</p>
+	<p class="title1">
+	당신의 이메일를 입력하세요.
+	<input type="email" name="email"/>
+	<input type="submit" value="제 출"/>
+	</p>
+<!-- input type="text"와 "email"의 차이점:"email"은 텍스트 필드에 입력된 문자가 이메일 형식이 아니면 오류메시지가 발생한다. -->
+	<br/>
+	<p id="title2">
+	당신의 쇼핑몰의 URL을 입력하세요.
+	<input type="url" name="website"/>
+	<input type="submit" value="제 출"/>
+	</p>
+<!-- "url"도 마찬가지로 텍스트 필드에 입력된 문자가 url형식이 아니면 오류메시지가 발생한다. -->
+	<br/>
+	검색 : <br/>
+	<input type="search" name="find" placeholder="검색어를 입력하세요."/>
+	<input type="submit" value="찾 기"/>
+</form>
+<!-- **식별자의 종류** -->
+<!-- class : 여러개의 엘리먼트에 하나의 식별자를 부여하고 싶을 때 사용. -->
+<!-- id : 하나의 엘리먼트에 하나의 식별자를 부여하고 싶을 때 사용. -->
+</body>
+</html>

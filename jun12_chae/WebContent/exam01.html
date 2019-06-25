@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="">
+	<fieldset>
+		<legend>Your Details:</legend>
+		<label for="name">Name:</label>
+		<input id="name" type="text" name="name"/><br/>
+		<label for="email">Email:</label>
+		<input id="email" type="text" name="email"/>
+	</fieldset>
+	<br/>
+	<fieldset>
+		<legend>Your Review:</legend>
+		<label for="choiceWeb">How did you hear about us?</label>
+		<select id="choiceWeb" name="webSite">
+			<option value="google">Google</option>
+			<option value="Naver">Naver</option>
+			<option value="Daum">Daum</option>
+			<option value="Yahoo">Yahoo</option>
+		</select>
+		<br/><br/>
+		<label>Would you visit again?</label>
+		<br/>
+		<input type="radio" name="visit" value="yes"/>Yes
+		<input type="radio" name="visit" value="no"/>No
+		<input type="radio" name="visit" value="maybe">Maybe
+		<br/><br/>
+		<label for="comments">Comments:</label><br/>
+		<textarea id="comments" rows="5" cols="30"></textarea>
+		<br/><br/>
+		<input type="checkbox" name="emailSendAgree" value="send" checked="checked">Sign me up for email updates
+		<br/>
+		<input type="submit" value="Submit review">
+	</fieldset>
+	<br/>
+</form>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.747798533282!2d139.74324421519987!3d35.658584838821206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbd9009ec09%3A0x481a93f0d2a409dd!2z64-E7L-EIO2DgOybjA!5e0!3m2!1sko!2skr!4v1560304251320!5m2!1sko!2skr" width="600" height="450" style="border:1" allowfullscreen></iframe>
+<br/><br/>
+<video src="puppy.mp4" width="400" height="300" preload="auto" controls loop poster="puppy.jpg"></video>
+<!-- controls:비디오의 재생,멈춤,볼륨조절,전체화면등의 버튼을 나타내줌, loop:비디오 무한재생 -->	
+<br/>
+<video poster="puppy.jpg" width="400" height="300" preload="auto" controls loop>
+	<source src="puppy.mp4"/>
+	<source src="puppy.webm">
+	<p>눈밭에서 뒹구는 귀여운 강아지</p>
+</video>
+<!-- source:동영상 파일의 확장자를 여러개 지정해 줄 수 있음. 
+<p>태그의 문자열은 두개의 확장자를 가진 파일을 브라우저에서 지원 안 할 경우 문자가 출력됨. -->
+<br/>
+<audio src="test-audio.mp3" controls autoplay>
+	<p>이 브라우저는 mp3를 지원하지 않습니다.</p>
+</audio>
+<audio controls autoplay>
+	<source src="test-audio.mp3">
+	<source src="test-audio.ogg">
+	<p>이 브라우저는 mp3,ogg를 지원하지 않습니다.</p>
+</audio>
+</body>
+
+</html>
