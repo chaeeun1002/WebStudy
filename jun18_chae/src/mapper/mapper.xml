@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mymapper">
+	<insert id="insertIntoBbs" parameterType="model.BBS">
+		insert into bbs(seqno,title,content,id,bbs_date)
+		values(#{seqno},#{title},#{content},null,#{bbs_date})
+	</insert>
+	<select id="selectMaxSeqno" resultType="Integer">
+		select max(seqno) from bbs
+	</select>
+	<select id="selectBBS" resultType="model.BBS">
+		select * from bbs order by seqno desc
+	</select>
+	<select id="selectBBSBySeqno" resultType="model.BBS" parameterType="Integer">
+		select * from bbs where seqno = #{seqno}
+	</select>
+</mapper>
