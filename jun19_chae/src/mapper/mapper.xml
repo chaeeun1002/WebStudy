@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mymapper">
+	<insert id="insertIntoItemInfo" parameterType="model.Product">
+		insert into item_info(code,name,price,info,origin)
+		values(#{code},#{name},#{price},#{info},#{origin})
+	</insert>
+	<select id="selectItemInfo" resultType="model.Product">
+		select * from item_info order by code desc
+	</select>
+	<select id="selectItemInfoByCode" resultType="model.Product" parameterType="Integer">
+		select * from item_info where code = #{code}
+	</select>
+	<insert id="insertIntoCustomerInfo" parameterType="model.Customer">
+		insert into customer_info(cust_id,cust_name,cust_addr,cust_reg_date)
+		values(#{cust_id},#{cust_name},#{cust_addr},#{cust_reg_date})
+	</insert>
+	<select id="selectCustomerInfo" resultType="model.Customer">
+		select * from customer_info
+	</select>
+	<select id="selectCustomerInfoByCusID" resultType="model.Customer" parameterType="String">
+		select * from customer_info where cust_id = #{cust_id}
+	</select>
+</mapper>
