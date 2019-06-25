@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>문서에 이미지 넣기</h1>
+<img alt="고양이" src="cat01.jpg" title="고양이는 귀엽다."><br/>
+src : 브라우저에게 이미지가 어디에 있는지를 명시<br/>
+alt : 시각장애인들을 위한 속성으로 음성을 들려주는 소프트웨어가 출력할 문장(필수속성)<br/>
+title : 이미지에 마우스를 올릴 때 출력될 문장<br/>
+
+<h3>이미지의 가로,세로 크기 설정</h3>
+<img alt="" src="danchu.jpg" width="400" height="600" title="단추는 귀여워"><br/>
+
+<h3>이미지가 출력되는 위치</h3>
+<h4>1. 문장이 이미지 다음에 출력된다.</h4>
+<img alt="" src="danchu.jpg" width="400" height="600">
+<p>
+단추는 귀엽다. 단추는 잠을 자도 귀엽고 밥을 먹어도 귀엽고 나를 향해 짖어도 귀엽다.
+단추는 이름처럼 똥그란 눈이 정말 귀엽다. 
+</p>
+
+<h4>2. 문장의 첫번째 줄이 이미지의 끝과 일치한다.</h4>
+<p>
+<img alt="" src="danchu.jpg" width="400" height="600">
+단추는 귀엽다. 단추는 잠을 자도 귀엽고 밥을 먹어도 귀엽고 나를 향해 짖어도 귀엽다.
+단추는 이름처럼 똥그란 눈이 정말 귀엽다. 
+</p>
+
+<h4>3. 문장의 단어와 단어 사이에 이미지가 출력된다.</h4>
+<p>
+단추는 귀엽다. 
+<img alt="" src="danchu.jpg" width="400" height="600">
+단추는 잠을 자도 귀엽고 밥을 먹어도 귀엽고 나를 향해 짖어도 귀엽다.
+단추는 이름처럼 똥그란 눈이 정말 귀엽다. 
+</p>
+
+<h4>4. 이미지를 수평방향(왼쪽)으로 정렬하기</h4>
+<p> 
+<img alt="" src="danchu.jpg" width="400" height="600" align="left"> 
+단추는 귀엽다. 단추는 잠을 자도 귀엽고 밥을 먹어도 귀엽고 나를 향해 짖어도 귀엽다.
+단추는 이름처럼 똥그란 눈이 정말 귀엽다.
+</p>
+
+<h4>5. 이미지를 수평방향(오른쪽)으로 정렬하기</h4>
+<p> 
+<img alt="" src="danchu.jpg" width="400" height="600" align="right"> 
+단추는 귀엽다. 단추는 잠을 자도 귀엽고 밥을 먹어도 귀엽고 나를 향해 짖어도 귀엽다.
+단추는 이름처럼 똥그란 눈이 정말 귀엽다. 
+</p>
+
+<h4>6. 이미지를 수직방향(top)으로 정렬하기</h4>
+<p> 
+<img alt="" src="danchu.jpg" width="400" height="600" align="top"> 
+단추는 귀엽다. 단추는 잠을 자도 귀엽고 밥을 먹어도 귀엽고 나를 향해 짖어도 귀엽다.
+단추는 이름처럼 똥그란 눈이 정말 귀엽다. 
+</p>
+
+<h4>7. 이미지를 수직방향(middle)으로 정렬하기</h4>
+<p> 
+<img alt="" src="danchu.jpg" width="400" height="600" align="middle"> 
+단추는 귀엽다. 단추는 잠을 자도 귀엽고 밥을 먹어도 귀엽고 나를 향해 짖어도 귀엽다.
+단추는 이름처럼 똥그란 눈이 정말 귀엽다. 
+</p>
+
+<h4>8. 이미지를 수직방향(bottom)으로 정렬하기</h4>
+<p> 
+<img alt="" src="danchu.jpg" width="400" height="600" align="bottom"> 
+단추는 귀엽다. 단추는 잠을 자도 귀엽고 밥을 먹어도 귀엽고 나를 향해 짖어도 귀엽다.
+단추는 이름처럼 똥그란 눈이 정말 귀엽다. 
+</p>
+
+<h4>이미지에 제목 넣기</h4>
+<figure>
+	<img alt="" src="danchu.jpg" width="400" height="600"><br/>
+	<figcaption>단추는 귀여워.</figcaption>
+</figure>
+</body>
+</html>
