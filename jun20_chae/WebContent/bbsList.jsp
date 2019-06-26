@@ -20,7 +20,7 @@
 		<th width="200">작성일</th>
 		<th width="100">작성자</th>
 	</tr>
-	<c:forEach var="bbs" begin="0" end="4"><%-- 0부터 4까지 5번 반복 --%>
+	<c:forEach var="bbs" begin="0" end="${BLIST.listSize - 1 }">
 		<tr>
 			<td>${BLIST.seqnoList[bbs] }</td>
 			<td><a href="BbsReadServlet?SEQNO=${BLIST.seqnoList[bbs] }">${BLIST.titleList[bbs] }</a></td>
@@ -45,10 +45,10 @@
 	<a href="BbsListServlet?FIRST_PAGE=${BLIST.seqnoList[0] }">이전 페이지</a>
 </c:if>
 <c:forEach var="p" begin="1" end="${PAGE }"> 
-<a href="">${p }</a>
+<a href="BbsListServlet?PAGE_NO=${p }">${p }</a>
 </c:forEach>
 <c:if test="${!BLIST.lastPage }">
-	<a href="BbsListServlet?LAST_PAGE=${BLIST.seqnoList[4] }">다음 페이지</a>
+	<a href="BbsListServlet?LAST_PAGE=${BLIST.seqnoList[BLIST.listSize -1] }">다음 페이지</a>
 </c:if>
 <br/>
 </body>

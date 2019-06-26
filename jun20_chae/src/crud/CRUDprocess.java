@@ -164,4 +164,114 @@ public class CRUDprocess {
 			s.close();
 		}
 	}
+	
+	public List<BBS> selectNextPage(Integer seqno){
+		SqlSession s = getSession();
+		List<BBS> list = null;
+		try {
+			list = s.selectList("mymapper.selectNextPage",seqno);
+			return list;
+		}finally {
+			s.close();
+		}
+	}
+	
+	public List<BBS> selectPrevPage(Integer seqno){
+		SqlSession s = getSession();
+		List<BBS> list = null;
+		try {
+			list = s.selectList("mymapper.selectPrevPage",seqno);
+			return list;
+		}finally {
+			s.close();
+		}
+	}
+	
+	public Integer selectPrevCount(Integer seqno) {
+		SqlSession s = getSession();
+		Integer num = null;
+		try {
+			num = s.selectOne("mymapper.selectPrevCount",seqno);
+			return num;
+		}finally {
+			s.close();
+		}
+	}
+	
+	public List<BBS> selectByPageNum(Integer pageNum){
+		SqlSession s = getSession();
+		List<BBS> list = null;
+		try {
+			list = s.selectList("mymapper.selectByPageNum",pageNum);
+			return list;
+		}finally {
+			s.close();
+		}
+	}
+	
+	public Integer selectNextCount(Integer pageNum) {
+		SqlSession s = getSession();
+		Integer num = null;
+		try {
+			num = s.selectOne("mymapper.selectNextCount",pageNum);
+			return num;
+		}finally {
+			s.close();
+		}
+	}
+	
+	public List<Product> selectItemNextPage(Integer code) {
+		SqlSession s = getSession();
+		List<Product> list = null;
+		try {
+			list = s.selectList("mymapper.selectItemNextPage",code);
+			return list;
+		}finally {
+			s.close();
+		}
+	}
+	
+	public List<Product> selectItemPrevPage(Integer code) {
+		SqlSession s = getSession();
+		List<Product> list = null;
+		try {
+			list = s.selectList("mymapper.selectItemPrevPage",code);
+			return list;
+		}finally {
+			s.close();
+		}
+	}
+	
+	public Integer selectItemPrevCount(Integer code) {
+		SqlSession s = getSession();
+		Integer count = null;
+		try {
+			count = s.selectOne("mymapper.selectItemPrevCount",code);
+			return count;
+		}finally {
+			s.close();
+		}
+	}
+	
+	public List<Product> selectItemByPageNum(Integer pageNum){
+		SqlSession s = getSession();
+		List<Product> list = null;
+		try {
+			list = s.selectList("mymapper.selectItemByPageNum",pageNum);
+			return list;
+		}finally {
+			s.close();
+		}
+	}
+	
+	public Integer selectItemNextCount(Integer pageNum) {
+		SqlSession s = getSession();
+		Integer num = null;
+		try {
+			num = s.selectOne("mymapper.selectItemNextCount",pageNum);
+			return num;
+		}finally {
+			s.close();
+		}
+	}
 }

@@ -38,4 +38,68 @@
 	<select id="selectItemInfoByCode" resultType="model.Product" parameterType="Integer">
 		select * from item_info where code = #{code}
 	</select>
+	<select id="selectNextPage" parameterType="Integer" resultType="model.BBS">
+		select * from bbs where seqno <![CDATA[<]]> #{seqno} order by seqno desc
+	</select>
+	<select id="selectItemNextPage" parameterType="Integer" resultType="model.Product">
+		select * from item_info where (to_number(code)) <![CDATA[<]]> #{code} order by code desc
+	</select>
+	<select id="selectPrevPage" parameterType="Integer" resultType="model.BBS">
+		select * from
+		(select seqno,title,id,content,bbs_date,rownum from
+			(select * from
+				(select * from bbs where seqno > #{seqno} order by seqno desc
+				) order by seqno
+			) where rownum 	<![CDATA[<]]> = 5 order by seqno desc 
+		)
+	</select>
+	<select id="selectItemPrevPage" parameterType="Integer" resultType="model.Product">
+		select * from
+		(select code,name,price,origin,rownum from
+			(select * from
+				(select * from item_info where (to_number(code)) > #{code} order by (to_number(code)) desc
+				) order by (to_number(code))
+			)where rownum <![CDATA[<]]> = 5 order by (to_number(code)) desc
+		)
+	</select>
+	<select id="selectPrevCount" parameterType="Integer" resultType="Integer">
+		select count(*) as num from bbs where seqno > #{seqno}
+	</select>
+	<select id="selectItemPrevCount" parameterType="Integer" resultType="Integer">
+		select count(*) as num from item_info where (to_number(code)) > #{code}
+	</select>
+	<select id="selectByPageNum" parameterType="Integer" resultType="model.BBS">
+		select * from(
+			select seqno,title,id,bbs_date,rownum rn from
+			(select * from bbs order by seqno desc)
+		)where (rn > ((#{page} - 1) * 5)) and
+			(rn <![CDATA[<]]> ((#{page} - 1) * 5 + 6))
+	</select>
+	<select id="selectItemByPageNum" parameterType="Integer" resultType="model.Product">
+		select * from(
+			select code,name,price,origin,rownum rn from
+			(select * from item_info order by (to_number(code)) desc)
+		)where (rn > ((#{page} - 1) * 5)) and
+			(rn <![CDATA[<]]> ((#{page} - 1) * 5 + 6))
+	</select>
+	<select id="selectNextCount" parameterType="Integer" resultType="Integer">
+		select count(*) as num from
+		(
+			select seqno, rownum rn from
+			(
+				select * from bbs order by seqno desc
+			)
+		)
+		where rn > ((#{no} - 1) * 5)
+	</select>
+	<select id="selectItemNextCount" parameterType="Integer" resultType="Integer">
+		select count(*) as num from
+		(
+			select code, rownum rn from
+			(
+				select * from item_info order by (to_number(code)) desc
+			)
+		)
+		where rn > ((#{no} - 1) * 5)
+	</select>
 </mapper>

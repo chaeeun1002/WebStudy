@@ -15,6 +15,7 @@
 		<input type="password" name="pwd" size="15" />
 		</label><br /><br /> 
 		<input type="submit" value="로그인">
+		<a href="login.jsp?BODY=join.jsp">회원가입</a>
 	</form>
 </body>
 </html>

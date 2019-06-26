@@ -15,7 +15,7 @@
 		<th width="150">상품가격</th>
 		<th width="100">상품원산지</th>
 	</tr>
-	<c:forEach var="item" begin="0" end="4">
+	<c:forEach var="item" begin="0" end="${PLIST.listSize - 1 }">
 		<tr>
 			<td>${PLIST.codeList[item] }</td>
 			<td><a href="ProductReadServlet?CODE=${PLIST.codeList[item] }">${PLIST.nameList[item] }</a></td>
@@ -33,9 +33,15 @@
 <%-- 	</c:forEach> --%>
 </table>
 <br/>
+<c:if test="${!PLIST.firstPage }">
+<a href="ProductListServlet?FIRST_PAGE=${PLIST.codeList[0] }">이전 페이지</a>
+</c:if>
 <c:forEach var="p" begin="1" end="${PAGE }">
-<a href="">${p }</a>
+<a href="ProductListServlet?PAGE_NO=${p }">${p }</a>
 </c:forEach>
+<c:if test="${!PLIST.lastPage }">
+<a href="ProductListServlet?LAST_PAGE=${PLIST.codeList[PLIST.listSize - 1] }">다음 페이지</a>
+</c:if>
 <br/>
 </body>
 </html>

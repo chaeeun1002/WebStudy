@@ -26,6 +26,7 @@ public class ProductList {
 	public Integer[] getPriceList() {
 		return priceList.toArray(new Integer[priceList.size()]);
 	}
+	
 	private ArrayList<String> originList = new ArrayList<String>();
 	public void setOriginList(int index, String origin) {
 		originList.add(index,origin);
@@ -34,4 +35,22 @@ public class ProductList {
 		return originList.toArray(new String[originList.size()]); 
 	}
 	
+	public int getListSize() {
+		return codeList.size();
+	}
+	
+	private boolean lastPage;
+	private boolean firstPage;
+	public boolean isLastPage() {
+		return lastPage;
+	}
+	public void setLastPage(boolean lastPage) {
+		this.lastPage = lastPage;
+	}
+	public boolean isFirstPage() {
+		return firstPage;
+	}
+	public void setFirstPage(boolean firstPage) {
+		this.firstPage = firstPage;
+	}
 }
