@@ -1,11 +1,11 @@
 function loginCheck() {
 	if (document.frm.userid.value.length == 0) {
-		alert("ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		alert("IDï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
 		frm.userid.focus();
 		return false;
 	}
 	if (document.frm.pwd.value == "") {
-		alert("¾ÏÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		alert("ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
 		frm.pwd.focus();
 		return false;
 	}
@@ -14,7 +14,7 @@ function loginCheck() {
 
 function idCheck() {
 	if (document.frm.userid.value == "") {
-		alert('ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä.');
+		alert('IDï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.');
 		document.formm.userid.focus();
 		return;
 	}
@@ -31,32 +31,32 @@ function idok(userid) {
 
 function joinCheck() {
 	if (document.frm.name.value.length == 0) {
-		alert("ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä.");
+		alert("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		frm.name.focus();
 		return false;
 	}
 	if (document.frm.userid.value.length == 0) {
-		alert("ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		alert("IDë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		frm.userid.focus();
 		return false;
 	}
 	if (document.frm.userid.value.length < 4) {
-		alert("ID´Â 4±ÛÀÚ ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.");
+		alert("IDëŠ” 4ì ì´ìƒ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		frm.userid.focus();
 		return false;
 	}
 	if (document.frm.pwd.value == "") {
-		alert("¾ÏÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		alert("ì•”í˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		frm.pwd.focus();
 		return false;
 	}
 	if (document.frm.pwd.value != document.frm.pwd_check.value) {
-		alert("¾ÏÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+		alert("ì•”í˜¸ê°€ ë§ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		frm.pwd.focus();
 		return false;
 	}
 	if (document.frm.reid.value.length == 0) {
-		alert("ID Áßº¹ °Ë»ç¸¦ ÇÏÁö ¾Ê¾Ò½À´Ï´Ù.");
+		alert("ID ë¥¼ ì‚¬ìš©í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		frm.userid.focus();
 		return false;
 	}

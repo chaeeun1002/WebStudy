@@ -18,7 +18,7 @@
 	}
 	#wrap{
 		width : 800px;
-		height : 310px;
+		height : 350px;
 		margin : 0 auto;
 	}
 	#aside{
@@ -33,6 +33,9 @@
 		float : right;
 		background-image : url(imgs/5.jpg);
 		background-size : 600px 310px; 
+	}
+	#join{
+		font-size : 12px;
 	}
 </style>
 </head>

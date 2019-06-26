@@ -11,9 +11,10 @@
 <table border="1">
 	<tr>
 		<th width="100">상품코드</th>
-		<th width="170">상품이름</th>
+		<th width="100">상품이름</th>
 		<th width="150">상품가격</th>
 		<th width="100">상품원산지</th>
+		<th></th>
 	</tr>
 	<c:forEach var="item" begin="0" end="${PLIST.listSize - 1 }">
 		<tr>
@@ -21,6 +22,7 @@
 			<td><a href="ProductReadServlet?CODE=${PLIST.codeList[item] }">${PLIST.nameList[item] }</a></td>
 			<td>${PLIST.priceList[item] }</td>
 			<td>${PLIST.originList[item] }</td>
+			<td><a href="#" onClick="window.open('AddCartServlet?CODE=${PLIST.codeList[item] }','Cart_Result','width=400,height=150').focus()">장바구니 담기</a></td>
 		</tr>
 	</c:forEach>
 <%-- 	<c:forEach var="item" items="${LIST }"> --%>

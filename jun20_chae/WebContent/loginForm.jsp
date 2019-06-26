@@ -15,7 +15,8 @@
 		<input type="password" name="pwd" size="15" />
 		</label><br /><br /> 
 		<input type="submit" value="로그인">
-		<a href="login.jsp?BODY=join.jsp">회원가입</a>
+		<span id="join"><a href="login.jsp?BODY=join.jsp">회원가입</a></span>
+<!-- 		span태그 : span태그 안에 있는 영역에 별도로 스타일을 지정하기 위해 사용. -->
 	</form>
 </body>
 </html>
